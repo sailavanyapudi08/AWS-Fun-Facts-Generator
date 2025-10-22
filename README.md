@@ -1,7 +1,7 @@
 # AWS-Fun-Facts-Generator
 The aws fun facts generator is an app which generates random cloud facts. we will connect multiple AWS services to make it dynamic, scalable and interactive.
 
-## 🚀 Steps to Build and Deploy
+## Steps to Build and Deploy
 
 This project is developed in four main stages:
 
