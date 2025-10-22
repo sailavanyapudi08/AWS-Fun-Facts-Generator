@@ -11,12 +11,12 @@ This project is developed in four main stages:
 4. Frontend Deployment – Use **AWS Amplify** to host and display the enhanced facts on a responsive web interface.
 
 ## Services Used
-- AWS Lambda  
-- Amazon API Gateway  
-- Amazon DynamoDB  
-- Amazon Bedrock  
-- AWS Amplify  
-- AWS IAM
+- AWS Lambda - Serverless Backend
+- Amazon API Gateway - exposes lambda as a rest API end point
+- Amazon DynamoDB - Database
+- Amazon Bedrock - Gen AI to generate facts
+- AWS Amplify - Frontend hosting service
+- AWS IAM - for secure permissions
 
 Question: Why cant we use a load balancer before lambda?
 
