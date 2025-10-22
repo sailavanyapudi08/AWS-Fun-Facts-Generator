@@ -21,3 +21,7 @@ This project is developed in four main stages:
 Question: Why cant we use a load balancer before lambda?
 
 Ans: Use API Gateway when you’re building a serverless API. Use ALB when you’re mixing Lambda with traditional compute (EC2/ECS) or need load balancing, not API management.
+
+# Architecture:
+
+<img width="429" height="300" alt="Screenshot 2025-10-22 at 5 28 46 PM" src="https://github.com/user-attachments/assets/ade81a2a-6318-4d42-b30c-0b92fa8ff8a9" />
