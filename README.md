@@ -32,7 +32,8 @@ Ans: Use API Gateway when youâ€™re building a serverless API. Use ALB when youâ€
 - Create a Lambda function that returns a hardcoded fact.
 
 ### Stage 2: API Gateway
-- Create an HTTP API and connect it to Lambda.  
+- Create an HTTP API and connect it to Lambda.
+
 - Deploy and get your public API endpoint.
 
 ### Stage 3: DynamoDB
@@ -64,6 +65,10 @@ Ans: Use API Gateway when youâ€™re building a serverless API. Use ALB when youâ€
 | CloudWatch Logs | Default for Lambda |
 
 ---
+
+## Output
+
+<img width="762" height="448" alt="Screenshot 2025-10-23 at 12 25 10â€¯PM" src="https://github.com/user-attachments/assets/54aacdb0-87db-4031-98a7-55dba3da2005" />
 
 ## Future Improvements
 
