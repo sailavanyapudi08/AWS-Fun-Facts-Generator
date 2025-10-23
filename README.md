@@ -26,11 +26,57 @@ Ans: Use API Gateway when you’re building a serverless API. Use ALB when you�
 
 <img width="429" height="300" alt="Screenshot 2025-10-22 at 5 28 46 PM" src="https://github.com/user-attachments/assets/ade81a2a-6318-4d42-b30c-0b92fa8ff8a9" />
 
-# Hardcoded logic --> Database-backed flexibility
-- create a lambda function with facts hardcoded
-- create HTTP API gateway to access the lambda backend service through URL by connecting the lambda with API Gateway
-- Create a DynamoDB and populate the database with facts.
-- Later, instead of editing Lambda code, we can just add more rows here.
-- By default, our Lambda cannot talk to DynamoDB. We must grant it permission: "that is because AWS follows least privilege principle."
-- Attach an IAM role: AmazonDynamoDBReadOnlyAccess to the role we created for Lambda function. So that  we’re allowing Lambda to read items but not modify/delete them (safer).
-- Update Lambda code so that it reads the dynamo table that we created earlier.
+## Steps to Build
+
+### Stage 1: Hardcoded Lambda
+- Create a Lambda function that returns a hardcoded fact.
+
+### Stage 2: API Gateway
+- Create an HTTP API and connect it to Lambda.  
+- Deploy and get your public API endpoint.
+
+### Stage 3: DynamoDB
+- Create a table (e.g., `CloudFacts`) and add facts.  
+- Attach `AmazonDynamoDBReadOnlyAccess` to Lambda role.  
+- Update Lambda to read facts from DynamoDB.
+
+### Stage 4: AI Enhancement
+- Attach `AmazonBedrockFullAccess` to Lambda role.  
+- Update Lambda code to send facts to Bedrock models for funny or engaging output.  
+
+### Stage 5: Frontend with Amplify
+- Create `index.html` to call your API and show facts.  
+- Enable CORS on API Gateway:  
+  - Allowed origins: your Amplify domain (or `*` for testing)  
+  - Allowed methods: GET, OPTIONS  
+  - Allowed headers: Content-Type, Authorization, X-Amz-Date, X-Api-Key, X-Amz-Security-Token  
+- Deploy the frontend to Amplify by uploading a ZIP with `index.html`.  
+- Open the Amplify URL and test your app.
+
+---
+
+## IAM Permissions
+
+| Service | Policy |
+|---------|--------|
+| DynamoDB | AmazonDynamoDBReadOnlyAccess |
+| Bedrock | AmazonBedrockFullAccess |
+| CloudWatch Logs | Default for Lambda |
+
+---
+
+## Requirements
+
+- AWS Account with Lambda, API Gateway, DynamoDB, and Bedrock access  
+- AWS Amplify for hosting  
+
+---
+
+## Future Improvements
+
+- Add user-submitted facts with POST requests  
+- Add authentication with Cognito  
+- Convert frontend to React + Amplify CI/CD  
+- Deploy backend using AWS SAM or CDK  
+
+
