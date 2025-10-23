@@ -65,13 +65,6 @@ Ans: Use API Gateway when youâ€™re building a serverless API. Use ALB when youâ€
 
 ---
 
-## Requirements
-
-- AWS Account with Lambda, API Gateway, DynamoDB, and Bedrock access  
-- AWS Amplify for hosting  
-
----
-
 ## Future Improvements
 
 - Add user-submitted facts with POST requests  
